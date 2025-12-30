@@ -1,94 +1,262 @@
-\# OTFS 6G Simulation Project
+📡 OTFS 6G Simulation Project
 
 
 
-This repository contains a MATLAB implementation of Orthogonal Time Frequency Space (OTFS) modulation designed for high-mobility 6G wireless communication systems.
+This repository contains a MATLAB-based implementation of Orthogonal Time Frequency Space (OTFS) modulation, designed for high-mobility 6G wireless communication systems.
+
+The project also includes OFDM for performance comparison using BER vs SNR analysis.
 
 
 
-\## Project Structure
+🚀 Overview
 
 
 
-\- transmitter/   | OTFS modulation blocks (ISFFT, Heisenberg)
-
-\- receiver/      | OTFS demodulation blocks (Wigner, SFFT)
-
-\- channel/       | AWGN and doubly selective channel models
-
-\- ofdm/          | OFDM modulator and demodulator for comparison
-
-\- analysis/      | BER calculation and plotting scripts
-
-\- results/       | Simulation results (BER files, plots)
+Orthogonal Time Frequency Space (OTFS) is a 2D modulation technique that operates in the Delay–Doppler (DD) domain, offering superior robustness against:
 
 
 
-\## System Flow
+High Doppler spread
 
 
 
-Bits → QAM → Delay-Doppler Grid → ISFFT → Heisenberg Transform → Channel  
-
-→ Wigner Transform → SFFT → BER Calculation
+Time-varying multipath channels
 
 
 
-\## Requirements
+This makes OTFS a strong waveform candidate for 6G, V2X, high-speed rail, and UAV communications.
 
 
 
-\- MATLAB R2020a or later
+🧱 System Architecture
 
-\- Communications Toolbox
-
-
-
-\## How to Run
+OTFS Transmitter and Receiver Block Diagram
 
 
 
-1\. Open MATLAB
+Transmitter Flow
 
-2\. Set this repository folder as the working directory
-
-3\. Run the main script:
+Bits → QAM → Delay–Doppler Mapping → ISFFT → Heisenberg Transform → Channel
 
 
 
-&nbsp;  main\_otfs\_simulation.m
+Receiver Flow
+
+Channel → Wigner Transform → SFFT → Delay–Doppler Demapping → QAM Demodulation → Bits
 
 
 
-\## Output
+📊 BER Performance Comparison
+
+OTFS vs OFDM under AWGN / Time-Varying Channel
 
 
 
-\- BER vs SNR performance plot
-
-\- Result files saved in the results/ folder
+Observation:
 
 
 
-\## Applications
+OTFS achieves better BER performance at high SNR
 
 
 
-\- High-mobility wireless communication
-
-\- 6G waveform research
-
-\- Delay-Doppler domain signal processing
-
-\- OTFS vs OFDM performance comparison
+OTFS is more resilient to Doppler effects than OFDM
 
 
 
-\## Author
+OFDM degrades faster in high-mobility scenarios
+
+
+
+📂 Project Structure
+
+otfs-6g-simulation/
+
+│
+
+├── main\_otfs\_simulation.m     % Main simulation script
+
+│
+
+├── transmitter/
+
+│   ├── otfs\_modulator.m       % OTFS modulator
+
+│   ├── isfft.m                % Inverse SFFT
+
+│   └── heisenberg.m           % Heisenberg transform
+
+│
+
+├── receiver/
+
+│   ├── otfs\_demodulator.m     % OTFS demodulator
+
+│   ├── wigner.m               % Wigner transform
+
+│   └── sfft.m                 % SFFT
+
+│
+
+├── channel/
+
+│   ├── awgn\_channel.m         % AWGN channel model
+
+│   └── doubly\_selective\_channel.m
+
+│
+
+├── ofdm/
+
+│   ├── ofdm\_modulator.m       % OFDM modulator
+
+│   └── ofdm\_demodulator.m     % OFDM demodulator
+
+│
+
+├── analysis/
+
+│   ├── ber\_calculation.m      % BER computation
+
+│   └── plot\_results.m         % BER plotting
+
+│
+
+├── results/
+
+│   └── (BER .mat files \& plots)
+
+│
+
+└── images/
+
+&nbsp;   ├── otfs\_block\_diagram.png
+
+&nbsp;   └── ber\_comparison.png
+
+
+
+🧠 Theory Summary
+
+Why OTFS?
+
+
+
+Transmits symbols in Delay–Doppler domain
+
+
+
+Converts time-varying channel into a nearly time-invariant representation
+
+
+
+Improves reliability under high mobility
+
+
+
+Key Transforms Used
+
+
+
+ISFFT / SFFT → DD ↔ Time-Frequency conversion
+
+
+
+Heisenberg Transform → Time-domain signal generation
+
+
+
+Wigner Transform → Time-Frequency signal recovery
+
+
+
+⚙️ Requirements
+
+
+
+MATLAB R2020a or later
+
+
+
+Communications Toolbox
+
+
+
+▶️ How to Run
+
+
+
+Open MATLAB
+
+
+
+Set otfs-6g-simulation as the working directory
+
+
+
+Run:
+
+
+
+main\_otfs\_simulation
+
+
+
+
+
+BER plots will be displayed
+
+
+
+Results will be saved inside the results/ folder
+
+
+
+📈 Output
+
+
+
+BER vs SNR plot (OTFS \& OFDM)
+
+
+
+.mat files storing BER results
+
+
+
+Visual comparison of modulation performance
+
+
+
+🎯 Applications
+
+
+
+6G wireless systems
+
+
+
+High-speed vehicular communication (V2X)
+
+
+
+UAV and drone networks
+
+
+
+High-mobility IoT scenarios
+
+
+
+👤 Author
 
 
 
 Sarvesh Shivasharan
+
+Electronics \& Communication Engineering
+
+OTFS | 6G | Wireless Systems | Signal Processing
 
 
 

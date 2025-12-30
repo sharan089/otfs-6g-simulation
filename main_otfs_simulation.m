@@ -50,3 +50,5 @@ grid on;
 xlabel('SNR (dB)');
 ylabel('BER');
 title('OTFS BER Performance');
+save('results/ber_otfs.mat','ber_otfs');
+save('results/ber_ofdm.mat','ber_ofdm');
