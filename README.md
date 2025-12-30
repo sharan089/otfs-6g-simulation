@@ -31,7 +31,7 @@ This makes OTFS a strong waveform candidate for 6G, V2X, high-speed rail, and UA
 🧱 System Architecture
 
 OTFS Transmitter and Receiver Block Diagram
-
+![OTFS Block Diagram](images/otfs_block_diagram.png)
 
 
 Transmitter Flow
@@ -49,7 +49,7 @@ Channel → Wigner Transform → SFFT → Delay–Doppler Demapping → QAM Demo
 📊 BER Performance Comparison
 
 OTFS vs OFDM under AWGN / Time-Varying Channel
-
+![BER Comparison](images/ber_comparison.png)
 
 
 Observation:
